@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.75%;
+}
+
+header {
+  background-color: #28262e;
+  font-size: 20px;
+
+  padding: 5rem;
+
+  min-height: 20vh;
+
+  color: white;
+}
+
+body {
+  min-width: 48rem;
+  min-height: 28rem;
+}
+
+.mainBody {
+  min-width: 28rem;
+  min-height: 28rem;
+
+  background-color: #3e3b47;
+
+  color: orange;
+
+  padding: 5rem;
+}
+
+.center-box {
+  width: 40rem;
+  height: 20rem;
+
+  background-color: #28262e;
+
+  border-radius: 3rem;
+
+  padding: 4rem;
+  margin-left: 30%;
+}
+
+h1 {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.link-container {
+  width: 100%;
+
+  border-radius: 2rem;
+
+  background-color: #3e3b47;
+
+  padding: 0.2rem;
+}
+
+b {
+  color: white;
+
+  margin-left: 2rem;
+
+  font-size: 1.3rem;
+}
+    </style>
+    <title>Static Template</title>
+  </head>
+ <body>
+    <header>
+      <h1>GoBarber web app</h1>
+    </header>
+    <main>
+      <div class="mainBody">
+        <div class="center-box">
+          <h1>Olá, {{userName}}</h1>
+          <h2>Abaixo está seu link para redefinir sua senha:</h2>
+          <div class="link-container">
+            <b>{{restorePassLink}}<b/>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
