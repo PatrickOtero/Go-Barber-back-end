@@ -1,5 +1,7 @@
 # Go-barber-API
 
+#### Link para o repositório de front-end da aplicação: https://github.com/PatrickOtero/Go-Barber-front-end
+
 ### - Api REST express para o web-app feito apenas com Javascript.
 
 #### - Tecnologias utilizadas: 
