@@ -5,6 +5,7 @@ exports.seed = async function(knex) {
     reserve_date: "2022-07-24 09:20:00",
     customer_id: 1,
     barber_id: 1,
+    created_at: new Date()
   }
 
   await knex('reserves').del()

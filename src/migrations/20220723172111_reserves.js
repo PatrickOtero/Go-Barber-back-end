@@ -7,6 +7,7 @@ exports.up = function(knex) {
         table.integer("barber_id").notNullable();
         table.boolean("canceled").notNullable().default(false);
         table.text("cancelReason").notNullable().default("");
+        table.dateTime("created_at").notNull();
     })
   };
   
