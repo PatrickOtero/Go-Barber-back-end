@@ -16,7 +16,7 @@ const customerRegister = async (req, res) => {
 
     const errorMessage = await createCustomerInfoValidator(req.body)
 
-    if (errorMessage) return res.status(401).json({ errorMessage })
+    if (errorMessage) return res.status(400).json({ message: errorMessage })
 
     const encryptedPassword = await bcrypt.hash(customer_password, 10)
 

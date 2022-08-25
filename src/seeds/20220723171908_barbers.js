@@ -3,9 +3,9 @@ const bcrypt = require('bcrypt')
 exports.seed = async function(knex) {
   const testUser = {
     id: 1,
-    barber_name: 'Cabeleireiro',
-    barber_email: 'cabeleireiro@gmail.com',
-    barber_password: 'cabeleireiro123',
+    barber_name: 'Marcus Aurelius',
+    barber_email: 'marcus@gmail.com',
+    barber_password: 'marcus123',
   };
 
   const table = 'barbers';

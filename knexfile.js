@@ -2,10 +2,10 @@ module.exports = {
 
     client: 'pg',
     connection: {
-      user: 'postgres',
-      host: 'localhost',
-      database: 'gobarber',
-      password: 'newLife10',
+      user: process.env.DB_LOCAL_USER,
+      host: process.env.DB_LOCAL_HOST,
+      database: process.env.DB_LOCAL_DATABASE,
+      password: process.env.DB_LOCAL_PASSWORD,
     },
     migrations: {
       directory: "src/migrations",
