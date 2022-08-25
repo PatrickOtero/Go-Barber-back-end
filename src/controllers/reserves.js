@@ -123,6 +123,7 @@ const reserveRegister = async (req, res) => {
       reserve_date,
       customer_id: id,
       barber_id: barberId,
+      created_at: new Date()
     })
 
     if (reserveCreated.length)
