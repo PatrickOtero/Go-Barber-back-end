@@ -3,8 +3,9 @@ const {
   barberRegister,
   barberEdit,
   listBarbers,
+  deleteBarber,
 } = require('./controllers/barbers')
-const { customerRegister, customerEdit } = require('./controllers/customers')
+const { customerRegister, customerEdit, deleteCustomer } = require('./controllers/customers')
 const { sendRecoverEmail, setNewPass } = require('./controllers/email/userRestoreAccount')
 const { reserveRegister, customerReservesList, barberReservesList, deleteReserve, cancelReserve, editReserve } = require('./controllers/reserves')
 const { userLogin } = require('./controllers/usersLogin')
@@ -34,9 +35,11 @@ router.use('/customer', customerValidation)
 // Customers
 router.put('/customer/edit', customerEdit)
 router.get('/customer/barbers/list', listBarbers)
+router.delete('/customer/delete/:userPassword', deleteCustomer)
 
 // Barbers
 router.put('/barber/edit', barberEdit)
+router.delete('/barber/delete/:userPassword', deleteBarber)
 
 // Reserves
 router.get('/barber/reserves/list', barberReservesList)

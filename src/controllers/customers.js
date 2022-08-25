@@ -115,4 +115,32 @@ const customerEdit = async (req, res) => {
   }
 }
 
-module.exports = { customerRegister, customerEdit }
+const deleteCustomer = async (req, res) => {
+  const { id } = req.user;
+  const { userPassword } = req.params;
+
+  try {
+
+    const currentPassword = await knex('customers')
+    .where({ id })
+    .select('customer_password')
+    .first()
+
+    const userValidPassword = await bcrypt.compare(
+      userPassword,
+      currentPassword.customer_password,
+    )
+
+    if (!userValidPassword) {
+      return res.status(400).json({ message: 'A senha informada está incorreta' })
+    }
+
+    await knex("customers").where({ id }).del();
+
+    return res.status(204).send();
+  } catch (error) {
+    return res.status(400).json({message: error.message})
+  }
+}
+
+module.exports = { customerRegister, customerEdit, deleteCustomer }

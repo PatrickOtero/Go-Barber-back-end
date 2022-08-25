@@ -7,7 +7,7 @@ const createCustomerSchema = yup.object().shape({
     .max(20, 'Nome muito grande'),
   customer_email: yup
     .string()
-    .email()
+    .email("E-mail em formato inválido")
     .required("O campo 'e-mail' é obrigatório"),
   customer_password: yup
     .string()

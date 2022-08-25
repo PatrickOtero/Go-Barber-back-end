@@ -5,7 +5,10 @@ const createBarberSchema = yup.object().shape({
     .string()
     .required("O campo 'nome' é obrigatório")
     .max(20, 'Nome muito grande'),
-  barber_email: yup.string().email().required("O campo 'e-mail' é obrigatório"),
+  barber_email: yup
+    .string()
+    .email("E-mail em formato inválido")
+    .required("O campo 'e-mail' é obrigatório"),
   barber_password: yup
     .string()
     .required("O campo 'senha' é obrigatório")

@@ -113,7 +113,7 @@ const reserveRegister = async (req, res) => {
 
     const reserve_date = `${date_year}-${date_month}-${date_day} ${date_hour}:${date_minutes}`
 
-    const reserveDateExists = await knex("reserves").where({reserve_date}).first()
+    const reserveDateExists = await knex("reserves").where({ reserve_date }).first()
 
     if (reserveDateExists) {
       return res.status(400).json({message: "Esta data já foi reservada"})
@@ -147,6 +147,12 @@ const editReserve = async(req, res) => {
   }
 
   const reserve_date = `${date_year}-${date_month}-${date_day} ${date_hour}:${date_minutes}`
+
+  const reserveDateExists = await knex("reserves").where({ reserve_date }).first()
+
+  if (reserveDateExists) {
+    return res.status(400).json({message: "Esta data já foi reservada"})
+  }
 
   try {
 

@@ -6,6 +6,7 @@ const {
   editBarberInfoValidator,
 } = require('../helpers/barbers/barbersHelpers')
 const { editUserSchema } = require('../validations/userEditSchema')
+const { errorMonitor } = require('nodemailer/lib/xoauth2')
 
 const listBarbers = async (req, res) => {
   try {
@@ -135,4 +136,31 @@ const barberEdit = async (req, res) => {
   }
 }
 
-module.exports = { barberRegister, barberEdit, listBarbers }
+const deleteBarber = async(req, res) => {
+  const { id } = req.user;
+  const { userPassword } = req.params;
+
+  try {
+    const currentPassword = await knex('barbers')
+    .where({ id })
+    .select('barber_password')
+    .first()
+
+    const userValidPassword = await bcrypt.compare(
+      userPassword,
+      currentPassword.barber_password,
+    )
+
+    if (!userValidPassword) {
+        return res.status(401).json({ message: 'A senha informada está incorreta' })
+    }
+
+    await knex("barbers").where({ id }).del();
+
+    return res.status(204).send();
+  } catch (error) {
+    return res.status(400).json({message: error.message});
+  }
+}
+
+module.exports = { barberRegister, barberEdit, deleteBarber, listBarbers }
