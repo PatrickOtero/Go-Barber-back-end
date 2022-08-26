@@ -42,5 +42,5 @@
  ### Importante: Se os passos não forem efetuados corretamente, a aplicação não funcionará como deveria e talvez nem se quer funcione.
  #### Se problemas persistirem, verifique se seu banco de dados é suportado pelo Knex.js.
 
- ### OBS: Serviço de recuperação de senha não funcionará localmente, pois é necessário o uso das credênciais de um servidor de e-mails para o "nodemailer.js".
+ ### OBS: Serviço de recuperação de senha não funcionará localmente, pois é necessário o uso de credenciais de um servidor de e-mails para o "nodemailer.js".
  
