@@ -30,11 +30,11 @@ const sendRecoverEmail = async (req, res) => {
       },
     )
 
-    const localRestoreLink = "http://localhost:3000/newpass"
-    // const serverRestoreLink = "https://patrickotero-gobarber.netlify.app/newpass"
+    // const localRestoreLink = "http://localhost:3000/newpass"
+    const serverRestoreLink = "https://patrickotero-gobarber.netlify.app/newpass"
 
     const userName = user.customer_name || user.barber_name
-    const restorePassLink = localRestoreLink;
+    const restorePassLink = serverRestoreLink;
    
     const sendData = {
       from: 'Time GoBarber <nao-responder@gobarber.com.br>',
