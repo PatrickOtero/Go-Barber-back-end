@@ -16,5 +16,6 @@ create table reserves (
     id serial not null,
     reserve_date timestamptz not null,
     customer_id integer not null references customers(id),
-    barber_id integer not null references barbers(id)
+    barber_id integer not null references barbers(id),
+    created_at timestamptz not null
 );
