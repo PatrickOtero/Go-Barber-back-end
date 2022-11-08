@@ -32,10 +32,12 @@
         DB_LOCAL_USER=(username do servidor de banco de dados instalado)
         DB_LOCAL_PASSWORD=(senha do servidor de banco de dados instalado)
               
-      9. Pegue as variáveis de ambiente acima e as use para preencher os seus respectivos campos no arquivo "knexfile.js",
+      9° - Pegue as variáveis de ambiente acima e as use para preencher os seus respectivos campos no arquivo "knexfile.js",
       pois no arquivo "connection.js" os campos já estão preenchidos.
-      10° - Execute o comando no mesmo local: "npm run dev"
-      11° - Aguarde a abertura do servidor Backend no seu terminal para começar a usar o front-end (interface) da aplicação.
+      10° - Execute no seu terminal o comando: "npm run migration:run".
+      11° - Execute no seu terminal o comando: "npm run seed:run".
+      12° - Execute o comando no mesmo local: "npm run dev".
+      13° - Aguarde a abertura do servidor Backend no seu terminal para começar a usar o front-end (interface) da aplicação.
                      
  ### Importante: Se os passos não forem efetuados corretamente, a aplicação não funcionará.
 
