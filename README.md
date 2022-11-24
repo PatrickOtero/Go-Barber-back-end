@@ -46,6 +46,8 @@
           
       13° - Execute o comando no mesmo local: "npm run dev".
       14° - Aguarde a abertura do servidor Backend no seu terminal para testar as rotas através de softwares como Postman e Insomnia.
+      
+ ### URL: http://localhost:3001/ (só será acessível no seu dispositivo após efetuar os passos acima)
                      
  ### Importante: Se os passos não forem efetuados corretamente, a aplicação não funcionará.
 
