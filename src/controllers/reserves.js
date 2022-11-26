@@ -191,7 +191,7 @@ const cancelReserve = async(req, res) => {
   const { reserveId } = req.params;
   const { cancelreason } = req.body;
 
-  if (!cancelReason) {
+  if (!cancelreason) {
     return res.status(400).json({message: "Por favor, informe o motivo do cancelamento"});
   }
 
