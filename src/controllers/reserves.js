@@ -75,7 +75,7 @@ const customerReservesList = async (req, res) => {
         'barbers.barber_email',
         'reserves.reserve_date',
         "reserves.canceled",
-        "reserves.cancelReason"
+        "reserves.cancelreason"
       )
 
     if (!reservesList.length)
