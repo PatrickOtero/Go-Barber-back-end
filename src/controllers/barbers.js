@@ -6,7 +6,6 @@ const {
   editBarberInfoValidator,
 } = require('../helpers/barbers/barbersHelpers')
 const { editUserSchema } = require('../validations/userEditSchema')
-const { errorMonitor } = require('nodemailer/lib/xoauth2')
 
 const listBarbers = async (req, res) => {
   try {
