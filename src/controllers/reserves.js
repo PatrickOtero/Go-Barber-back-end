@@ -189,7 +189,7 @@ const deleteReserve = async(req, res) => {
 
 const cancelReserve = async(req, res) => {
   const { reserveId } = req.params;
-  const { cancelReason } = req.body;
+  const { cancelreason } = req.body;
 
   if (!cancelReason) {
     return res.status(400).json({message: "Por favor, informe o motivo do cancelamento"});
@@ -205,7 +205,7 @@ const cancelReserve = async(req, res) => {
     await knex('reserves')
     .update({
       canceled: true,
-      cancelReason
+      cancelreason
     })
     .where({ id: reserveId })
 
