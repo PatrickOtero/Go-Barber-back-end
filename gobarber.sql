@@ -18,6 +18,6 @@ create table reserves (
     customer_id integer not null references customers(id),
     barber_id integer not null references barbers(id),
     created_at timestamptz not null,
-    canceled boolean,
+    canceled boolean not null default false,
     cancelReason text
 );
