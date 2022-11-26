@@ -46,7 +46,7 @@ const sendRecoverEmail = async (req, res) => {
           restorePassLink,
       },
     }
-    nodemailer.sendMail(sendData)
+    await nodemailer.sendMail(sendData)
 
     return res.status(200).json({message: "Sucesso. Procure em sua caixa de entrada de e-mails pelo link de recuperação", token});
   } catch (error) {
